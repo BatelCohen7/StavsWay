@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const HOST = 'https://stavs-way-server.onrender.com'
   export const GetUser = async (email, password) => {
     console.log(`pass ${password} ans emd ${email}`);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/user/login/',{
+      const response = await axios.post(`${HOST}/api/user/login/`,{
         email,password
       });
       return response.data;
@@ -19,8 +19,7 @@ import axios from "axios";
 export const GetMealOfDonatorAxios = async (doantorId) => {
 
   try {
-    const response = await axios.get(`http://localhost:3000/api/donation/user/${doantorId}`);
-   
+    const response = await axios.get(`${HOST}/api/donation/user/${doantorId}`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -32,7 +31,7 @@ export const GetMealOfDonatorAxios = async (doantorId) => {
 export const GetAllOpenDonations = async (doantorId) => {
 
   try {
-    const response = await axios.get(`http://localhost:3000/api/donation/open`);
+    const response = await axios.get(`${HOST}/api/donation/open`);
    
     return response.data;
   } catch (error) {
@@ -44,7 +43,7 @@ export const GetAllOpenDonations = async (doantorId) => {
 export const GetAllPlacedOrderAxios = async () => {
 
   try {
-    const response = await axios.get(`http://localhost:3000/api/order/placed`);
+    const response = await axios.get(`${HOST}/api/order/placed`);
     console.log("hello from GetAllPlacedOrderAxios");
    console.log(response.data);
     return response.data;
@@ -58,7 +57,7 @@ export const GetAllOrderOfVolunteer = async (volunteerId) => {
 
   try {
     console.log(`voulnteer id is ${volunteerId}`)
-    const response = await axios.get(`http://localhost:3000/api/order/volunteer/${volunteerId}`);
+    const response = await axios.get(`${HOST}/api/order/volunteer/${volunteerId}`);
     console.log("hello from getOrderOfVoulnteer");
    console.log(response.data);
     return response.data;
@@ -72,7 +71,7 @@ export const UpdateOrder = async (orderId, volunteerId, statusOrderCode) => {
   console.log(`update Order is ${orderId} ${volunteerId} ${statusOrderCode}`);
   
   try {
-    const response = await axios.patch(`http://localhost:3000/api/order/${orderId}/`, {
+    const response = await axios.patch(`${HOST}/api/order/${orderId}/`, {
       "volunteerId":volunteerId,
       "orderStatusCode":statusOrderCode
     });
@@ -86,7 +85,7 @@ export const UpdateOrder = async (orderId, volunteerId, statusOrderCode) => {
 export const CreateOrderAxiosByRecipent = async (donationId,recipientId,amount) => {
 
   try {
-    const response = await axios.post(`http://localhost:3000/api/order/`,{
+    const response = await axios.post(`${HOST}/api/order/`,{
       donationId,recipientId,amount
     });
     console.log("hello from GetAllPlacedOrderAxios");
@@ -102,7 +101,7 @@ export const FetchOrdersForRecipient = async (recipientId) => {
   console.log(`hello from all FetchOrdersForRecipient first `);
   console.log(recipientId);
   try {
-    const response = await axios.get(`http://localhost:3000/api/order/recipient/${recipientId}`);
+    const response = await axios.get(`${HOST}/api/order/recipient/${recipientId}`);
     console.log("hello from fetchOrdersForRecipient");
    console.log(response.data);
     return response.data;
@@ -118,7 +117,7 @@ export const FetchOrdersForRecipient = async (recipientId) => {
 export const CreateUserAxios = async (user) => {
 
   try {
-    const response = await axios.post(`http://localhost:3000/api/user/`,{
+    const response = await axios.post(`${HOST}/api/user/`,{
       ...user
     });
     return GetUser(user.email,user.password);

@@ -20,7 +20,8 @@ const SaveDonationWithImage = async (
     console.log("hello from axios");
 
     // Adjust the Axios endpoint as needed
-    const axiosEndpoint = "http://localhost:3000/api/donation";
+    const HOST = 'https://stavs-way-server.onrender.com'
+    const axiosEndpoint = `${HOST}/api/donation`;
     // Make sure 'donationData' is defined. I'm assuming it's supposed to be the data you're sending in the request.
     if (!image){
       image = '';
