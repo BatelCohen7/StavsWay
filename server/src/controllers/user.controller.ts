@@ -3,6 +3,7 @@ import { UserModel } from "../model/user.model"
 
 export const postNewUser: Handler = async (req, res) => {
     try {
+        console.log(`attempt to create user`)
         const body = req.body
         const user = new UserModel({...body, date: new Date()})
         await user.save()

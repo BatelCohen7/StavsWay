@@ -33,7 +33,8 @@ const SingUpDonator = () => {
     }
 
     formData.location={city:city,floor: floor, houseNumber: houseNumber, street: street};
-    const user = await CreateUserAxios(formData);;
+    console.log(JSON.stringify(formData));
+    const user = await CreateUserAxios(formData);
     authCtx.login(user);
 
   };

@@ -68,6 +68,7 @@ const SignUp = () => {
   }
 
   formData.firstName = firstName;
+  formData.password = password;
   formData.lastName = lastname;
   formData.gender = selectedGender;
   formData.email = email;
