@@ -44,7 +44,7 @@ const DonateListToInfoNav = () => {
           }}
         />
         <BottomTab.Screen
-          name="Donatorprofile"
+          name="פרופיל"
           component={Profile}
           options={{
             tabBarIcon: ({ color, size }) => (

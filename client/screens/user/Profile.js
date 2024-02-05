@@ -1,4 +1,4 @@
-import { View, Image, Text, FlatList, StyleSheet } from 'react-native';
+import {View, Image, Text, FlatList, StyleSheet, Pressable} from 'react-native';
 import { AuthContext } from "../../store/auth-context";
 import { useContext, useState } from "react";
 
@@ -33,7 +33,9 @@ const Profile = () => {
                     <Text style={styles.inputDetails}>{authCtx.user.location.city}</Text>
                 </>}
             </View>
-
+        <Pressable onPress={authCtx.logout}>
+            <Text>התנתק</Text>
+        </Pressable>
         </View>
     )
 
