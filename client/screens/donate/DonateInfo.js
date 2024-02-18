@@ -23,7 +23,7 @@ const DonateInfo = () => {
   const handleOrderButtonClick = () => {
     Alert.alert(
       "תאשר את ההזמנה",
-      `האם אתה בתוך שאתה רוצה לעשות הזמנה של ${quantity} מנות`,
+      `האם אתה בטוח שאתה רוצה לעשות הזמנה של ${quantity} מנות`,
       [
         {
           text: "אוותר הפעם",

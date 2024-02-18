@@ -45,7 +45,7 @@ const Login = () => {
         onUpdateValue={emailInputHandler}
         value={email}
         style={styles.textInput}
-        placeHolder={"אימל"}
+        placeHolder={"אימייל"}
       />
 
       <AuthInput
