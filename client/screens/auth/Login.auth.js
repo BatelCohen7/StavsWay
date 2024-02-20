@@ -117,12 +117,10 @@ const styles = StyleSheet.create({
   },
   logoText: {
     fontSize: 30,
-    // fontFamily: "Dosis-Light",
     color: "#7ca57e",
   },
   subtitleText: {
     fontSize: 16,
-    // fontFamily: "Dosis-Light",
     color: "#7ca57e",
   },
   formContainer: {

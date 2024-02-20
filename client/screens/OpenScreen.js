@@ -1,15 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
-import { Font } from 'expo-font';
-import { useFonts } from 'expo-font';
 
 const OpenScreen = () => {
-  //   useEffect(() => {
-  //     // Load the "Dosis" font
-  //     Font.loadAsync({
-  //       Dosis: require('./path/to/Dosis-Regular.ttf'), // Adjust the path accordingly
-  //     });
-  //   }, []);
 
   return (
     <View style={styles.container}>
@@ -66,8 +58,7 @@ const styles = StyleSheet.create({
     color: "white",
     top: 120, // Adjusted from 7.33rem
     fontSize: 40,
-    fontFamily: "Dosis",
-    letterSpacing: 0.06 * 16 // Adjusted from 0.06em    
+    letterSpacing: 0.06 * 16 // Adjusted from 0.06em
   },
   stavsWayText: {
     top: 7.33 * 4, // Adjusted from 7.33rem
@@ -116,6 +107,5 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontSize: 3 * 16, // Adjusted from 3rem
     color: '#fff',
-    // fontFamily: 'Dosis'
   },
 });
