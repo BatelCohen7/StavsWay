@@ -31,15 +31,17 @@ const AllPlacedOrders = () => {
     const { id, donationId, recipientId, amount, volunteerId, status, from, to } = item;
     return (
       <DeliveryItem
-        key={id}
+        from={from}
+        to={to}
         orderId={id}
+        key={id}
+        status={status}
         donationId={donationId}
         recipientId={recipientId}
         amount={amount}
         volunteerId={volunteerId}
-        status={status}
-        from={from}
-        to={to}
+
+
         refetchOrders={fetchOrders} // Pass the refetch function to the child component
       />
     );

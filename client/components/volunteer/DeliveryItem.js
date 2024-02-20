@@ -1,15 +1,18 @@
 import { Text, View, Pressable, StyleSheet, Platform } from "react-native";
-import { UpdateOrder } from "../../util/http";
+import { getDonationById, UpdateOrder } from "../../util/http";
 import { AuthContext } from "../../store/auth-context";
 import React, { useContext } from "react";
+import axios from "axios";
+import description from "../donator/NewDonate/Description";
 
-const DeliveryItem = ({ from, to, orderId, distanceKm, status, refetchOrders }) => {
+const DeliveryItem = ({ from, to, orderId, status, refetchOrders, amount,donationId }) => {
   const authCtx = useContext(AuthContext);
 
   const handlePress = async () => {
     const volunteerId = authCtx.user.id;
     const statusOrderCode = 2;
-
+    const Meal = await getDonationById(donationId);
+    const description = Meal.description;
     try {
       const response = await UpdateOrder(orderId, volunteerId, statusOrderCode);
       console.log(response);
@@ -22,8 +25,10 @@ const DeliveryItem = ({ from, to, orderId, distanceKm, status, refetchOrders }) 
 
   return (
     <View style={styles.container}>
-      <Text style={styles.fromToText}>{`מקור: ${from.city}, ${from.street}, ${from.houseNumber}`}</Text>
-      <Text style={styles.fromToText}>{`יעד: ${to.city}, ${to.street}, ${to.houseNumber}`}</Text>
+      <Text style={styles.fromToText}>{`מקור: ${ from.city }, ${ from.street }, ${ from.houseNumber }`}</Text>
+      <Text style={styles.fromToText}>{`יעד: ${ to.city}, ${to.street}, ${to.houseNumber}` }</Text>
+      <Text style={styles.fromToText}>{`כמות: ${amount}`}</Text>
+      <Text style={styles.fromToText}>{`תיאור: ${description}`}</Text>
       <Pressable
         android_ripple={{ color: "#ccc" }}
         accessibilityRole="button"

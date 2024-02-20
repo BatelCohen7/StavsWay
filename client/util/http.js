@@ -15,6 +15,15 @@ const HOST = 'https://stavs-way-server.onrender.com'
   };
 
 
+export const getDonationById = async (id) => {
+  try {
+    const response = await axios.get(`${HOST}/api/donation/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error; // Rethrow the error to handle it in the calling code
+  }
+}
 
 export const GetMealOfDonatorAxios = async (doantorId) => {
 
