@@ -20,6 +20,13 @@ StavsWay is a comprehensive software solution developed as a final project for a
 - **Real-Time Matching:** Automatically matches donations with recipients and volunteers, ensuring efficient and timely distribution.
 - **User Profiles:** Each user type (donor, volunteer, recipient) has a personalized profile with relevant information and history.
 
+**Application usage video:
+<video width="320" height="240" controls>
+  <source src="app.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 ## System Structure
 
 - **Frontend:** Developed using React.js, providing an intuitive and responsive user interface.
