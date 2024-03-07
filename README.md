@@ -26,7 +26,6 @@ StavsWay is a comprehensive software solution developed as a final project for a
   Your browser does not support the video tag.
 </video>
 
-
 ## System Structure
 
 - **Frontend:** Developed using React.js, providing an intuitive and responsive user interface.
