@@ -47,23 +47,19 @@ To run the StavsWay application locally:
 1. Clone the repository:
 git clone https://github.com/BatelCohen7/StavsWay.git
 
-css
-Copy code
+
 2. Navigate to the project directory:
 cd StavsWay
 
-markdown
-Copy code
+
 3. Install dependencies:
 npm install
 
-markdown
-Copy code
+
 4. Start the development server:
 npm start
 
-markdown
-Copy code
+
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ## Contributors
